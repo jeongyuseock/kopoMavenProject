@@ -103,8 +103,8 @@ def discountedPrice(price:Double, rate:Double) : Double = {
   var b = 15.147218
   var c = 69.72756
 
-  var ra = math.round(a*100)/100.0
-  var rb = math.round(b*100)100.0
+  //var ra = math.round(a*100)/100.0
+  // var rb = math.round(b*100)100.0
 
 
 //  prectice@@@  var a = 15.125222
