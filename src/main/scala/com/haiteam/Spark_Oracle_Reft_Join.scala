@@ -48,7 +48,7 @@ object Spark_Oracle_Reft_Join {
       var qtyNo = rawDataColumns.indexOf("QTY")
       var productnameNo = rawDataColumns.indexOf("PRODUCTNAME")     //스파크에서 대소문자 구분함ㅇㅋ?
 
-      var rawRdd = rawData.rdd
+      var rawRdd = rawData.rdd   //HHH
 
     }
 
