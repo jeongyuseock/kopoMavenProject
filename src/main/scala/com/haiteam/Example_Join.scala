@@ -26,7 +26,7 @@ object Example_Join {
     option("header", "true").load(dataPath + subData)
 
 
-// (임시)테이블생성 일단가볍게 쓰는용도? 이리저리
+  // (임시)테이블생성 일단가볍게 쓰는용도? 이리저리
   mainData1.createOrReplaceTempView("maindata")
   subData1.createOrReplaceTempView("subdata")
 
@@ -38,8 +38,8 @@ object Example_Join {
 
   var leftJoinData =
 
-     //a.productgroup b.productid
-    var test2 = spark.sql("select a.regionid, a.productgroup, b.productname, a.yearweek, a.qty " +
+  //a.productgroup b.productid
+  var test2 = spark.sql("select a.regionid, a.productgroup, b.productname, a.yearweek, a.qty " +
     "from maindata a " + " left join subdata b " +
     "on a.productgroup = b.productid")
 
@@ -56,10 +56,10 @@ object Example_Join {
   //데이터 읽어오기
   val selloutData= spark.read.format("jdbc").
     options(Map("url" -> staticUrl, "dbtable" -> selloutDb, "user" -> staticUser, "password" -> staticPw)).load
- //테이블생성
+  //테이블생성
   selloutData.createOrReplaceTempView("selloutTable")
 
-// 데이터 읽어오기
+  // 데이터 읽어오기
   val selloutData2= spark.read.format("jdbc").
     options(Map("url" -> staticUrl, "dbtable" -> selloutDb2, "user" -> staticUser, "password" -> staticPw)).load
   //테이블생성
@@ -69,10 +69,10 @@ object Example_Join {
 
 
 
-   spark.sql("select a.product, b.regionname " +
+  spark.sql("select a.product, b.regionname " +
     "from selloutTable a " +
     "left join selloutTable2 b " +
-  "on a.regionid = b.regionid")
+    "on a.regionid = b.regionid")
 
   spark.sql("select a.regionid, b.regionname " +
     "from selloutTable a " +
